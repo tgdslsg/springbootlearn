@@ -1,0 +1,14 @@
+###################  项目启动端口  ###################
+server:
+  port: 8890
+
+logging:
+  level:
+    root: INFO
+    com.xncoding: DEBUG
+  path: D:/log/springboot-aop
+
+
+#spring:
+#  aop:
+#    proxy-target-class: true
