@@ -1,12 +1,16 @@
 package com.lsg.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.lsg.Async.AsyncDemo;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 /**
  * @Author: lsg
@@ -18,9 +22,29 @@ import java.util.Map;
 @Slf4j
 public class UserController  {
 
+    @Autowired
+    private AsyncDemo asyncDemo;
+
     @GetMapping("/hello")
     public String hello(){
-        return "hello!!!";
+        asyncDemo.noreturn();
+        Future<String> stringFuture =  asyncDemo.asyncReturn();
+
+        try {
+            while (true){
+                if(stringFuture.isDone()){
+                    System.out.println(stringFuture.get());
+                    break;
+                }
+                System.out.println("contenuer");
+                Thread.sleep(1000);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        return stringFuture.toString();
     }
 
     @PostMapping("/first")
