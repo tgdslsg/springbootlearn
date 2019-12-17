@@ -10,9 +10,6 @@ import java.util.Date;
 
 /**
  * 后台管理用户表
- *
- * @author 熊能
- * @version 1.0
  * @since 2018/01/02
  */
 @TableName(value = "t_user")
