@@ -16,7 +16,7 @@ import static javax.print.attribute.standard.MediaSizeName.C;
 public  class PrintSuperUtil {
     /**
      * @param O 传入对象
-     * @return  返回对象字段数组
+     * @return  返回对象非空字段valuse
      */
     private static String[] getNames(Object O){
         Field[]  fields = O.getClass().getDeclaredFields();
