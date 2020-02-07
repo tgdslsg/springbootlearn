@@ -1,0 +1,25 @@
+package com.example.mybatisdemo;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class MybatisdemoApplicationTests {
+
+    @Test
+    public void contextLoads() {
+
+
+
+    }
+
+
+    class humen{}
+    class father extends humen{}
+    class son extends father{}
+    class ll extends father{}
+
+}
