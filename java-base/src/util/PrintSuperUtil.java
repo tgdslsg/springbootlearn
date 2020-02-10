@@ -1,17 +1,12 @@
 package util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-
-import static javax.print.attribute.standard.MediaSizeName.C;
 
 /**
  * @Author: lsg
  * @Date: 2020/1/2 11:08
- * @Description:
+ * @Description:  打印父类对象有值参数
  */
 public  class PrintSuperUtil {
     /**
